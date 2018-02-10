@@ -1,3 +1,17 @@
+const Card = () => ({
+
+    cardTitle: 'card title',
+    cardBody: '...',
+    setCardTitle (cardTitle) {
+        this.cardTitle = cardTitle;
+        return this;
+    },
+    setCardBody (cardBody) {
+        this.cardBody = cardBody;
+        return this;
+    }
+});
+
 
 //list factory function
 const List = () => ({
