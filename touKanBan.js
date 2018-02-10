@@ -1,6 +1,5 @@
-const theLists = []
 
-
+//list factory function
 const List = () => ({
   
     listTitle: 'Untitled',
@@ -17,6 +16,7 @@ const List = () => ({
 
 });
 
+//board factory function
 const Board = () => ({
   
     boardTitle: 'Untitled',
@@ -34,4 +34,3 @@ const Board = () => ({
 });
 
 
-const newList = (list) => theLists.push(list);
