@@ -47,4 +47,19 @@ const Board = () => ({
 
 });
 
+const Render = {
+    card: function (card) {
+        let title = document.createElement('h2');
+        let body = document.createElement('p');
+
+        
+            title.textContent = card.cardTitle;
+            body.textContent = card.cardBody;
+
+            document.body.appendChild(title);
+            document.body.appendChild(body);
+        
+        
+    }
+    };
 
