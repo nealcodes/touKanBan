@@ -1,16 +1,3 @@
-const Card = () => ({
-
-    cardTitle: 'card title',
-    cardBody: '...',
-    setCardTitle (cardTitle) {
-        this.cardTitle = cardTitle;
-        return this;
-    },
-    setCardBody (cardBody) {
-        this.cardBody = cardBody;
-        return this;
-    }
-});
 
 
 //list factory function
@@ -22,11 +9,24 @@ const List = () => ({
       this.listTitle = listTitle;
       return this;
     },
-    addMember (memberName) {
-      this.listMembers.push(memberName);
+    addMember () {
+        
+      let ace =newCard(this.listTitle);
+    this.listMembers.push(ace);
       return this;
+    },
+    
+    render () {
+        let listNode = document.createElement('div');
+        this.listMembers.forEach(function(card) {
+            let div = document.createElement('div');
+            div.appendChild(card.render());
+            listNode.appendChild(div);
+        });
+        document.body.appendChild(listNode);
     }
-  
+   
+    
 
 });
 
@@ -47,19 +47,40 @@ const Board = () => ({
 
 });
 
-const Render = {
-    card: function (card) {
-        let title = document.createElement('h2');
-        let body = document.createElement('p');
 
-        
-            title.textContent = card.cardTitle;
-            body.textContent = card.cardBody;
 
-            document.body.appendChild(title);
-            document.body.appendChild(body);
-        
-        
-    }
+const newCard = function(parent) {
+    let text = 'enter card text';
+    let image = 'attach an image';
+    parent = parent;
+    let setText = function (newText) {
+        this.text = newText;
+        return this;
     };
+    let attachImage = function (imgSrc) {
+        this.image = imgSrc;
+        return this;
+    };
+    let render = function () {
+        let fragment = document.createDocumentFragment();
+        let cardText = document.createElement('p');
+        let cardImg = document.createElement('img');
+        cardText.textContent = this.text;
+        cardImg.src = this.image;
+        fragment.appendChild(cardText);
+        fragment.appendChild(cardImg);
 
+        return fragment;
+    }
+
+    
+
+    return {
+        text,
+        image,
+        parent,
+        setText,
+        attachImage,
+        render
+    }
+}

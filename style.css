@@ -1,0 +1,13 @@
+body {
+    background-color: blanchedalmond;
+    display: flex;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    padding: 2rem;
+    margin: 1rem;
+    background-color: aliceblue;
+}
