@@ -49,10 +49,9 @@ const Board = () => ({
 
 
 
-const newCard = function(parent) {
-    let text = 'enter card text';
-    let image = 'attach an image';
-    parent = parent;
+const Card = function() {
+    let title = 'enter card title';
+    let text = 'some text here';
     let setText = function (newText) {
         this.text = newText;
         return this;
@@ -64,6 +63,7 @@ const newCard = function(parent) {
     let render = function () {
         let fragment = document.createDocumentFragment();
         let cardText = document.createElement('p');
+        
         let cardImg = document.createElement('img');
         cardText.textContent = this.text;
         cardImg.src = this.image;
