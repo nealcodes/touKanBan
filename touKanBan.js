@@ -34,13 +34,13 @@ const List = () => ({
 const Board = () => ({
   
     boardTitle: 'Untitled',
-    boardMembers: [],
+    lists: [],
     setBoardTitle (boardTitle) {
       this.boardTitle = boardTitle;
       return this;
     },
-    addMember (memberName) {
-      this.boardMembers.push(memberName);
+    addList () {
+      this.lists.push(List());
       return this;
     }
   
@@ -56,31 +56,27 @@ const Card = function() {
         this.text = newText;
         return this;
     };
-    let attachImage = function (imgSrc) {
-        this.image = imgSrc;
-        return this;
-    };
+    
     let render = function () {
-        let fragment = document.createDocumentFragment();
-        let cardText = document.createElement('p');
-        
-        let cardImg = document.createElement('img');
-        cardText.textContent = this.text;
-        cardImg.src = this.image;
-        fragment.appendChild(cardText);
-        fragment.appendChild(cardImg);
+        var tem = document.querySelector('#Card');
+        var title = tem.content.querySelectorAll('.card-header-title'),
+        text = tem.content.querySelectorAll('.content');
+        title[0].textContent = this.title;
+        text[0].textContent = this.text;
 
-        return fragment;
+        var col = document.querySelector('.column');
+        var clone = document.importNode(tem.content, true);
+        col.appendChild(clone);
     }
 
     
 
     return {
+        title,
         text,
-        image,
-        parent,
+        
         setText,
-        attachImage,
+        
         render
     }
 }

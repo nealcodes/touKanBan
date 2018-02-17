@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="columns">
+        <div class="column list">
+            <div class="card new-card">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        Add a card...
+                    </p>
+                    <a href="#" class="card-header-icon">
+                        <span class="icon">
+                                <i class="fas fa-plus"></i>
+                        </span>
+                    </a>
+                </header>
+            </div>
+        </div>
+    </div>
+
+
+
+<template id="Card">
+    <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            This is a card
+          </p>
+          <a href="#" class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </a>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore quia id, enim modi unde possimus eum omnis, minima, ducimus recusandae quos vel doloribus ullam dolores reprehenderit! Magnam corrupti dolorem voluptate!
+          </div>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">Save</a>
+          <a href="#" class="card-footer-item">Edit</a>
+          <a href="#" class="card-footer-item">Delete</a>
+        </footer>
+      </div>
+</template>
+
+
+<script src="testing.js"></script>
+</body>
+</html>
