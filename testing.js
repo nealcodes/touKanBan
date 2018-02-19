@@ -27,3 +27,19 @@ const List = [];
 
 const addCard = document.querySelector(".new-card");
 addCard.addEventListener('click', Card);
+
+const Lists = document.querySelector(".list");
+Lists.addEventListener('click', function(e) {
+    let card = e.target.closest('.card');
+
+    if (!card) {
+        return;
+    }
+
+    switch (event.target.closest('a').dataset.action) {
+        case "delete":
+            this.removeChild(card);
+    }
+    
+    console.log(card.dataset.cardId);
+});
