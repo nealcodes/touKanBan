@@ -30,13 +30,16 @@ addCard.addEventListener('click', Card);
 
 const Lists = document.querySelector(".list");
 Lists.addEventListener('click', function(e) {
-    let card = e.target.closest('.card');
+    let t = e.target;
+    let list = t.closest('.list');
+    let card = t.closest('.card');
+    let action = t.closest('a').dataset.action;
 
     if (!card) {
         return;
     }
 
-    switch (event.target.closest('a').dataset.action) {
+    switch (action) {
         case "delete":
             this.removeChild(card);
     }
