@@ -41,7 +41,7 @@ Lists.addEventListener('click', function(e) {
 
     switch (action) {
         case "delete":
-            this.removeChild(card);
+            list.removeChild(card);
     }
     
     console.log(card.dataset.cardId);

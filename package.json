@@ -1,0 +1,22 @@
+{
+  "name": "toukanban",
+  "version": "1.0.0",
+  "description": "a kanban app",
+  "main": "touKanBan.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nealcodes/touKanBan.git"
+  },
+  "author": "Neal Duncan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nealcodes/touKanBan/issues"
+  },
+  "homepage": "https://github.com/nealcodes/touKanBan#readme",
+  "devDependencies": {
+    "webpack": "^3.11.0"
+  }
+}
