@@ -46,3 +46,12 @@ Lists.addEventListener('click', function(e) {
     
     console.log(card.dataset.cardId);
 });
+
+const State = {
+
+
+    //state for the currentBoard object, which contains all lists, cards and other board-specific props
+    currentBoard: {},
+
+    //state for userPreferences goes here, I think
+}
