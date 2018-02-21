@@ -23,6 +23,10 @@ const Card = function () {
 
 };
 
+const Component = function (obj) {
+    var template = document.querySelector(obj.template);
+}
+
 const List = [];
 
 const addCard = document.querySelector(".new-card");
@@ -34,14 +38,28 @@ Lists.addEventListener('click', function(e) {
     let list = t.closest('.list');
     let card = t.closest('.card');
     let action = t.closest('a').dataset.action;
+    let component;
 
-    if (!card) {
+    //captures component type
+    if (!list) {
         return;
     }
+
+    if (!card) {
+        component = List;
+    }
+
+    //component = Card;
+
+
+
 
     switch (action) {
         case "delete":
             list.removeChild(card);
+
+        case "edit":
+            card.querySelector(".content").contentEditable = true;
     }
     
     console.log(card.dataset.cardId);
@@ -54,4 +72,18 @@ const State = {
     currentBoard: {},
 
     //state for userPreferences goes here, I think
-}
+};
+
+const Actions = {
+
+    create () {},
+
+    read () {},
+
+    update () {},
+
+    del () {}
+
+
+
+};
